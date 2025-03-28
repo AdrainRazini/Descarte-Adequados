@@ -23,9 +23,12 @@ Projeto de refatoração de um site, implementando **recursos de acessibilidade*
 site-central/
 │-- public/
 │   │-- index.html
+│   │-- login.html
+│   │-- user-dashboard.html
 │   │-- css/
 │   │-- js/
 │   │-- img/
+│   │-- video/
 │      
 │-- readme.md
 │-- package.json
