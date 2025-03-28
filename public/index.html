@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descarte Correto</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <script src="js/main.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
@@ -155,7 +154,31 @@
     </style>
 </head>
 <body>
-
+    <script>
+        // Verifica se o usuário está logado
+        if (!localStorage.getItem('username') || !localStorage.getItem('useremail')) {
+          // Verifica se o redirecionamento já foi feito nesta sessão
+          if (!sessionStorage.getItem('redirected')) {
+            // Marca que o redirecionamento foi feito
+            sessionStorage.setItem('redirected', 'true');
+            // Redireciona para a página de login
+            window.location.href = "login.html";  // Substitua "login.html" pelo caminho correto
+          }
+        } else {
+          // Exibe as informações do usuário se estiver logado
+          document.getElementById('user-name').innerText = localStorage.getItem('username') || "Não identificado";
+          document.getElementById('user-email').innerText = localStorage.getItem('useremail') || "Não identificado";
+      
+          const userPhoto = localStorage.getItem('userphoto');
+          if (userPhoto) {
+              document.getElementById('user-avatar').src = userPhoto;  // Exibe a foto
+          }
+        }
+      
+        function Voltar() {
+          window.location.href = 'index.html';  // Redireciona para a página inicial
+        }
+      </script>
       
 
     <header>
