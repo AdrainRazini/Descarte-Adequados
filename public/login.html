@@ -6,6 +6,23 @@
   <title>Login</title>
   <link rel="stylesheet" href="css/page.css">
   <style>
+
+body {
+            background-image: url(img/fundo.png);
+            display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+            background-size: cover; /* Faz a imagem cobrir todo o fundo */
+            background-repeat: no-repeat; /* Impede a repetição */
+            background-position: center; /* Centraliza a imagem */
+            background-attachment: fixed; /* Mantém a imagem fixa no fundo */
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,13 +30,7 @@
       font-family: Arial, sans-serif;
     }
 
-    body {
-      background: #128C7E;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+    
 
     #login-page {
       background: white;
@@ -79,7 +90,7 @@
   <div id="login-page">
     <h2>Entrar no Site</h2>
     
-    <!--     <button id="back-btn" class="back-btn" onclick="window.location.href='index.html'">Voltar</button>     -->
+   <button id="back-btn" class="back-btn" onclick="window.location.href='index.html'">Pular</button>   
      
     
     <!-- Botão de Login com Google -->
