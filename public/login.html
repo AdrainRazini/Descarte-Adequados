@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login com Google</title>
+
+  <!-- Vinculando o CSS para o estilo da página -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Incluindo um ícone de página -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<style>
+
+    /* Resetando alguns estilos padrões */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+/* Caixa de login */
+.login-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-box p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.btn-google {
+  background-color: #4285f4;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-google:hover {
+  background-color: #357ae8;
+}
+
+/* Ícone do Google */
+.google-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg);
+}
+
+
+</style>
+
+<body>
+
+  <!-- Container principal -->
+  <div class="container">
+    <div class="login-box">
+      <h2>Entrar com Google</h2>
+      <p>Faça login com sua conta Google para acessar a plataforma.</p>
+      <button id="login-btn" class="btn-google">
+        <img src="images/google-icon.svg" alt="Google Logo" class="google-icon">
+        Login com Google
+      </button>
+    </div>
+  </div>
+
+  <!-- Script de autenticação do Firebase -->
+  <script type="module" src="js/main.js"></script>
+  
+</body>
+</html>
