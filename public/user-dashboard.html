@@ -31,14 +31,23 @@
   </div>
 
   <script>
-    // Recupera as informações do usuário
-    document.getElementById('user-name').innerText = localStorage.getItem('username') || "Não identificado";
-    document.getElementById('user-email').innerText = localStorage.getItem('useremail') || "Não identificado";
+    // Verifica se o usuário está logado (dados de nome e email no localStorage)
+    const nome = localStorage.getItem('username');
+    const email = localStorage.getItem('useremail');
 
-    // Recupera a foto do perfil do usuário
-    const userPhoto = localStorage.getItem('userphoto');
-    if (userPhoto) {
+    if (!nome || !email) {
+      // Se não houver nome ou email no localStorage, redireciona para a página de login
+      window.location.href = 'login.html';
+    } else {
+      // Caso o usuário esteja logado, exibe as informações na página
+      document.getElementById('user-name').innerText = nome;
+      document.getElementById('user-email').innerText = email;
+
+      // Recupera a foto do perfil do usuário
+      const userPhoto = localStorage.getItem('userphoto');
+      if (userPhoto) {
         document.getElementById('user-avatar').src = userPhoto;  // Exibe a foto
+      }
     }
 
     function Voltar() {
