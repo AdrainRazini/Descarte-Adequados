@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo da Reciclagem - Fase por Fase</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #e0f2f1;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #00695c;
+    }
+
+    #status {
+      margin: 15px;
+      font-size: 18px;
+    }
+
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .item, .bin {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 80px;
+      user-select: none;
+    }
+
+    .item {
+      background-color: #fff8e1;
+      border: 2px dashed #ffb300;
+      cursor: grab;
+    }
+
+    .bin {
+      background-color: #dcedc8;
+      border: 2px solid #558b2f;
+    }
+
+    .correct {
+      background-color: #a5d6a7 !important;
+    }
+
+    .wrong {
+      background-color: #ef9a9a !important;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #timer {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+
+<h1>♻️ Jogo da Reciclagem</h1>
+<div id="status">Fase: <span id="level">1</span> | Pontuação: <span id="score">0</span></div>
+<div id="timer">Tempo: <span id="time">30</span>s</div>
+
+<div class="game-container" id="items-container"></div>
+<div class="game-container" id="bins-container"></div>
+
+<script>
+  const allItems = [
+    { nome: "📄 Papel", tipo: "papel" },
+    { nome: "🧴 Garrafa PET", tipo: "plastico" },
+    { nome: "🥫 Lata", tipo: "metal" },
+    { nome: "🍌 Casca de banana", tipo: "organico" },
+    { nome: "📦 Caixa de papelão", tipo: "papel" },
+    { nome: "🗞️ Jornal", tipo: "papel" },
+    { nome: "🍗 Osso de frango", tipo: "organico" },
+    { nome: "🧃 Caixa de suco", tipo: "plastico" },
+    { nome: "🪙 Tampinha de lata", tipo: "metal" },
+    { nome: "🍅 Restos de comida", tipo: "organico" }
+  ];
+
+  const lixeiras = [
+    { tipo: "papel", nome: "🧻 Lixeira Papel" },
+    { tipo: "plastico", nome: "🧴 Lixeira Plástico" },
+    { tipo: "metal", nome: "🧲 Lixeira Metal" },
+    { tipo: "organico", nome: "🍃 Lixeira Orgânico" }
+  ];
+
+  let score = 0;
+  let fase = 1;
+  let tempo = 30;
+  let timer;
+  const itemsContainer = document.getElementById("items-container");
+  const binsContainer = document.getElementById("bins-container");
+  const scoreDisplay = document.getElementById("score");
+  const levelDisplay = document.getElementById("level");
+  const timeDisplay = document.getElementById("time");
+
+  function embaralhar(array) {
+    return array.sort(() => Math.random() - 0.5);
+  }
+
+  function carregarFase() {
+    itemsContainer.innerHTML = "";
+    binsContainer.innerHTML = "";
+    tempo = 30;
+    timeDisplay.textContent = tempo;
+
+    const itensFase = embaralhar([...allItems]).slice(0, fase + 2);
+
+    itensFase.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.textContent = item.nome;
+      div.setAttribute("draggable", "true");
+      div.dataset.tipo = item.tipo;
+
+      div.addEventListener("dragstart", e => {
+        e.dataTransfer.setData("text/plain", item.tipo);
+      });
+
+      itemsContainer.appendChild(div);
+    });
+
+    lixeiras.forEach(lixeira => {
+      const bin = document.createElement("div");
+      bin.className = "bin";
+      bin.dataset.tipo = lixeira.tipo;
+      bin.textContent = lixeira.nome;
+
+      bin.addEventListener("dragover", e => e.preventDefault());
+
+      bin.addEventListener("drop", e => {
+        e.preventDefault();
+        const tipo = e.dataTransfer.getData("text/plain");
+        if (tipo === bin.dataset.tipo) {
+          score++;
+          bin.classList.add("correct");
+        } else {
+          score--;
+          bin.classList.add("wrong");
+        }
+
+        setTimeout(() => {
+          bin.classList.remove("correct");
+          bin.classList.remove("wrong");
+        }, 1000);
+
+        scoreDisplay.textContent = score;
+
+        // Remover o item
+        const dragged = [...itemsContainer.children].find(i => i.dataset.tipo === tipo);
+        if (dragged) dragged.remove();
+
+        // Se acabou os itens, próxima fase
+        if (itemsContainer.children.length === 0) {
+          clearInterval(timer);
+          setTimeout(() => {
+            fase++;
+            levelDisplay.textContent = fase;
+            carregarFase();
+            iniciarTimer();
+          }, 800);
+        }
+      });
+
+      binsContainer.appendChild(bin);
+    });
+  }
+
+  function iniciarTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => {
+      tempo--;
+      timeDisplay.textContent = tempo;
+      if (tempo <= 0) {
+        clearInterval(timer);
+        alert("⏰ Tempo esgotado! Fim de jogo.\nSua pontuação final: " + score);
+        resetarJogo();
+      }
+    }, 1000);
+  }
+
+  function resetarJogo() {
+    score = 0;
+    fase = 1;
+    scoreDisplay.textContent = score;
+    levelDisplay.textContent = fase;
+    carregarFase();
+    iniciarTimer();
+  }
+
+  carregarFase();
+  iniciarTimer();
+</script>
+
+<div id="convite" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #ffffffee; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999;">
+    <h2>🎉 Bem-vindo ao Jogo da Reciclagem!</h2>
+    <p>Ajude a salvar o planeta separando os resíduos corretamente.</p>
+    <button onclick="iniciarJogo()" style="padding: 10px 20px; font-size: 18px; border-radius: 8px; border: none; background-color: #388e3c; color: white; cursor: pointer;">Jogar agora</button>
+  </div>
+  
+  <script>
+    function iniciarJogo() {
+      document.getElementById("convite").style.display = "none";
+      carregarFase();
+      iniciarTimer();
+    }
+  </script>
+  
+</body>
+</html>
