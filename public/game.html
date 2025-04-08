@@ -204,24 +204,54 @@
     carregarFase();
     iniciarTimer();
   }
-
-  carregarFase();
-  iniciarTimer();
 </script>
 
-<div id="convite" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #ffffffee; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999;">
+<!-- Tela de Boas-Vindas -->
+<div id="convite" style="
+  position: fixed; 
+  top: 0; left: 0; right: 0; bottom: 0; 
+  background-image: url('img/fundo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffffee;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 9999;
+">
+  <div style="
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+  ">
     <h2>🎉 Bem-vindo ao Jogo da Reciclagem!</h2>
     <p>Ajude a salvar o planeta separando os resíduos corretamente.</p>
-    <button onclick="iniciarJogo()" style="padding: 10px 20px; font-size: 18px; border-radius: 8px; border: none; background-color: #388e3c; color: white; cursor: pointer;">Jogar agora</button>
+    <button onclick="iniciarJogo()" style="
+      padding: 10px 20px; 
+      font-size: 18px; 
+      border-radius: 8px; 
+      border: none; 
+      background-color: #388e3c; 
+      color: white; 
+      cursor: pointer;
+      margin-top: 15px;
+    ">Jogar agora</button>
   </div>
-  
-  <script>
-    function iniciarJogo() {
-      document.getElementById("convite").style.display = "none";
-      carregarFase();
-      iniciarTimer();
-    }
-  </script>
-  
+</div>
+
+<!-- Script para iniciar o jogo ao clicar no botão -->
+<script>
+  function iniciarJogo() {
+    document.getElementById("convite").style.display = "none";
+    carregarFase();
+    iniciarTimer();
+  }
+</script>
+
 </body>
 </html>
