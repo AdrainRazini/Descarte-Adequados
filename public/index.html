@@ -157,6 +157,60 @@
 
 
 
+
+        #convite-jogo {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #a5d6a7, #388e3c);
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    #convite-jogo h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    #convite-jogo p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    #convite-jogo a {
+      padding: 15px 30px;
+      background-color: #1b5e20;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+
+    #convite-jogo a:hover {
+      background-color: #2e7d32;
+    }
+
+    /* 📱 Media query para telas menores (como celulares) */
+    @media (max-width: 600px) {
+      #convite-jogo h1 {
+        font-size: 2rem;
+      }
+
+      #convite-jogo p {
+        font-size: 1rem;
+      }
+
+      #convite-jogo a {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+    }
         
     </style>
 </head>
@@ -240,13 +294,11 @@
     
     </header>
     
-    <div id="convite-jogo" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(to bottom, #a5d6a7, #388e3c); color: white; text-align: center; font-family: Arial, sans-serif;">
-        <h1 style="font-size: 3rem; margin-bottom: 1rem;">🌱 Desafio da Reciclagem</h1>
-        <p style="font-size: 1.2rem; max-width: 500px; margin-bottom: 2rem;">Você está pronto para mostrar que entende tudo sobre reciclagem? Acerte os lixos certos e salve o planeta!</p>
-        <a href="game.html" style="padding: 15px 30px; background-color: #1b5e20; color: white; border-radius: 10px; text-decoration: none; font-size: 1.2rem; transition: background 0.3s;">🎮 Jogar Agora</a>
+    <div id="convite-jogo">
+        <h1>🌱 Desafio da Reciclagem</h1>
+        <p>Você está pronto para mostrar que entende tudo sobre reciclagem? Acerte os lixos certos e salve o planeta!</p>
+        <a href="game.html">🎮 Jogar Agora</a>
       </div>
-      
-
     <section class="section">
         <video class="imagem-dinamica" width="640" height="360" controls>
             <source src="video/A Importância_da_Separação do Lixo.mp4" type="video/mp4">
