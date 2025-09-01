@@ -1,0 +1,482 @@
+/* Root Para cores */
+:root {
+  /* Tons principais */
+  --color-primary: #2ecc71;   /* Verde principal */
+  --color-primary-dark: #27ae60; /* Verde mais escuro */
+  --color-primary-light: #a8e6cf; /* Verde suave */
+
+  /* Fundo e superfícies */
+  --color-background: #f9fdfb; /* Branco esverdeado */
+  --color-surface: #ffffff;   /* Branco puro */
+  --color-surface-alt: #f0fdf4; /* Fundo verde bem clarinho */
+
+  /* Texto */
+  --color-text: #1a1a1a;      /* Quase preto */
+  --color-text-light: #4d4d4d; /* Cinza médio */
+  --color-text-on-primary: #ffffff; /* Texto em botões verdes */
+
+  /* Bordas e detalhes */
+  --color-border: #d1e7dd;    /* Verde bem claro */
+  --color-accent: #00c853;    /* Verde vibrante para hover */
+
+ --laranja-claro: #FF862A;
+--cor-primaria: #CB6D43;
+--fundo-contraste: #000000;
+--texto-contraste: #ffffff;
+--link-contraste: #ffd700;
+--fundo-galeria: #FAF4F4;
+
+  /* Sombras */
+  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Fontes */
+  --font-main: 'Inter', sans-serif;
+  --font-alt: 'Poppins', sans-serif;
+}
+
+
+/* Estilos Gerais */
+body {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+/* Alinhamento H */
+
+h1{
+    text-align: center;
+}
+
+/* Header Suave */
+.header {
+ width: auto;
+  background: var(--color-surface-alt); /* verde bem clarinho */
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-light);
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-main);
+  position: sticky; /* Fica fixo no topo */
+  top: 0;
+  z-index: 1000;
+}
+
+
+/* Logo */
+.header .logo {
+  font-family: var(--font-alt);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+
+
+.header nav a {
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.header nav a:hover {
+  color: var(--color-text-on-primary);
+  transform: translateY(-2px);
+}
+
+
+/* Nav Links padrão desktop */
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Menu hambúrguer - escondido no desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;             /* esconde menu desktop */
+    position: absolute;
+    top: 70px;                 /* abaixo do header */
+    right: 20px;
+    background: var(--color-surface);
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .nav-links.active {
+    display: flex;             /* mostra menu quando ativo */
+  }
+
+  .menu-toggle {
+    display: flex;             /* mostra o hambúrguer */
+  }
+}
+
+
+
+
+/* Containers */
+
+.fundoA {
+  background-image: url('../image/Fundo_Preto_A.png');
+  background-size: cover;      /* cobre todo o container */
+}
+
+.fundoB {
+  background-image: url('../image/Fundo_Arvores.png');
+  background-size: cover;      /* cobre todo o container */
+}
+
+.fundoC {
+  background-image: url('../image/Gamer_Fundo.png');
+  background-size: cover;      /* cobre todo o container */
+}
+
+
+/* Alinha imagem e texto juntos horizontalmente */
+.align-block {
+  display: flex;
+  flex-direction: row;  /* horizontal */
+  gap: 15px;            /* espaço entre imagem e texto */
+  align-items: center;  /* centraliza verticalmente */
+}
+
+/* Para centralizar vertical/horizontal */
+.align-center.align-block {
+  justify-content: center;
+}
+
+/* Pequenos ajustes nas imagens */
+.image_retangulo {
+  width: auto;
+  height: 100px;
+  object-fit: contain;
+}
+
+
+/* Container principal */
+.container, .container_Video  {
+  width: 90%;
+  margin: 20px auto; /* centraliza na lateral */
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-light);
+  font-family: var(--font-main);
+  color: var(--color-text);
+  min-height: auto; /* altura automática */
+}
+
+/* Container principal para fundos  */
+.container_back, .container_Video_back {
+  width: 90%;
+  margin: 20px auto; /* centraliza na lateral */
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-light);
+  font-family: var(--font-main);
+  color: var(--color-text-on-primary);
+  min-height: auto; /* altura automática */
+}
+
+/* Título dentro do container */
+.container h1 {
+  color: var(--color-primary-dark);
+  font-family: var(--font-alt);
+  margin-bottom: 15px;
+}
+
+/* Parágrafo */
+.container p {
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+
+/* Containers de alinhamento */
+.align-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.align-top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.align-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+/* Botão de ação */
+.button {
+  display: inline-block;
+  padding: 10px 18px;
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.button:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.Linha {
+    border: 1px solid var(--color-accent);
+}
+
+.logo_Image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.section {
+ padding: 3rem;
+ text-align: center;
+ max-width: 800px;
+ margin: auto;
+}
+
+
+/* Importação de fontes */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Lemon&display=swap');
+
+ 
+
+        h2 {
+            font-family: 'Lemon', serif;
+            font-size: 2.5em;
+            color: var(--laranja-claro);
+            margin-bottom: 1rem;
+        }
+
+        .imagem-dinamica {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .botao-inicio {
+            background-color: var(--laranja-claro);
+            border-radius: 30px;
+            border: none;
+            width: 14em;
+            height: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .botao-inicio:hover {
+            background-color: var(--cor-primaria);
+            color: var(--texto-contraste);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+
+/* Modal Overlay */
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px; /* adiciona espaço interno nas laterais para telas pequenas */
+    box-sizing: border-box;
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+    background: var(--box-bg, #ffffff);
+    padding: 30px 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh; /* limita a altura para caber na tela */
+    overflow-y: auto; /* adiciona rolagem vertical quando necessário */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Botão de Fechar */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--marcador);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close:hover {
+    color: #f44336;
+}
+
+
+/* Imagem */
+.imgcub {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Link do Projeto */
+.box-inf {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #2196f3;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+.box-inf:hover {
+    background: #1976d2;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+/* Social do Footer :)*/
+
+.social-links {
+display: flex;
+justify-content: center;
+gap: 10px;
+margin-top: 10px;
+}
+
+.social-links a {
+font-size: 1rem;
+color: rgb(0, 0, 0);
+transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+color: #0073b1; /* Cor de destaque para hover no LinkedIn */
+}
+/*--------------------------------------------------------------------------------------*/
+
+/*
+
+ █████  ██████  ██████  ██  █████  ███    ██ 
+██   ██ ██   ██ ██   ██ ██ ██   ██ ████   ██ 
+███████ ██   ██ ██████  ██ ███████ ██ ██  ██ 
+██   ██ ██   ██ ██   ██ ██ ██   ██ ██  ██ ██ 
+██   ██ ██████  ██   ██ ██ ██   ██ ██   ████ 
+
+*/

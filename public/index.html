@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recliclagem</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/script.js">
+    <link rel="shortcut icon" href="image/favicon/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo align-block">
+    <img class="logo_Image" src="image/Logo.png" alt="🌿 EcoFeiraDigital">
+    🌿 EcoFeiraDigital
+  </div>
+
+  <!-- Botão do menu hambúrguer -->
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <nav class="nav-links">
+    <a class="button" href="#sobre">Início</a>
+    <a class="button" href="#dicas">Saiba Mais</a>
+    <a class="button" href="login.html">Entrar</a>
+  </nav>
+
+
+
+
+    <!-- Bloco de acessibilidade -->
+    <div id="acessibilidade" class="menu-acessibilidade"> 
+        <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false">
+            <i class="bi bi-universal-access-circle"></i> Acessibilidade
+        </button>
+        
+        <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+            <button id="aumentar-fonte" class="btn btn-primary fw-bold" aria-label="Aumentar o tamanho da fonte">
+                <i class="bi bi-plus-circle"></i> A+
+            </button>
+            <button id="diminuir-fonte" class="btn btn-primary fw-bold" aria-label="Diminuir o tamanho da fonte">
+                <i class="bi bi-dash-circle"></i> A-
+            </button>
+            <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alternar o contraste de cores">
+                <i id="icone-contraste" class="bi bi-moon-fill"></i> Contraste
+            </button>
+           
+            
+        </div>
+    </div>
+
+</header>
+
+<script>
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+
+
+
+<div class="container_back fundoA" id="sobre">
+  <h1>Reciclagem Interativa e Dinâmica</h1>
+  
+  <div class="align-center align-block">
+    <img src="image/Vaso_Flores.png" alt="" class="image_retangulo">
+    <p>🌳 "Separar o lixo hoje é plantar um amanhã melhor."</p>
+  </div>
+
+  <div class="Linha"></div>
+
+  <div class="align-center align-block">
+    <p>🌱 "Cada atitude conta:
+        <br>
+         reduza, reutilize e recicle."</p>
+  <img src="image/Logo.png" alt="" class="image_retangulo">
+</div>
+</div>
+
+
+<div class="container_back fundoC">
+  <h1>Jogo Da Reciclagem</h1>
+
+    <div class="align-center align-block">
+    <p> 🌳 "Experimente Jogar Nosso jogo de Separação de Lixo"</p>
+  <img src="image/Controle.png" alt="" class="image_retangulo" style="border-radius: 50%;" >
+</div>
+
+<div class="Linha"></div>
+<div class="align-center">
+  <a href="game.html" class="button">Jogar</a>
+</div>
+</div>
+
+<div class="container_Video_back fundoB">
+  <h1>Video</h1>
+          <video class="container_Video_back"  controls>
+            <source src="video/A_Importância_da_Separação_do_Lixo.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div class="Linha"></div>
+</div>
+
+<div class="container_back fundoA">
+  <h1>Nossa Missão e Proposta</h1>
+  <p>
+ O EcoFeiraDigital tem o objetivo de mostrar como a reciclagem é importante para o meio ambiente, demonstrando de forma dinâmica Quiziz, Jogos, Informações, Notícias, EcoPontos, Calculadora de Emissão de CO2, entre diversas outras coisas - Clique no link abaixo para saber o que o nosso projeto pode oferecer para nossos usuários
+  </p>
+  <a href="#" class="button">Clique Aqui</a>
+</div>
+
+
+ 
+    <section id="dicas" class="section">
+        <h2><i class="bi bi-lightbulb-fill"></i> Dicas de Reciclagem</h2>
+     <ul class="align-center" style="list-style: none; padding-left: 0;">
+        <li><i class="bi bi-check-circle-fill text-success"></i> Separe os resíduos orgânicos dos recicláveis.</li>
+        <li><i class="bi bi-battery-charging text-warning"></i> Descarte pilhas e baterias em locais apropriados.</li>
+        <li><i class="bi bi-arrow-repeat text-primary"></i> Reutilize materiais sempre que possível.</li>
+        <li><i class="bi bi-x-circle-fill text-danger"></i> Evite o uso excessivo de plásticos descartáveis.</li>
+        <li><i class="bi bi-people-fill text-info"></i> Participe de campanhas de reciclagem na sua comunidade.</li>
+     </ul>
+
+        <img src="image/Lixo_mao.jpeg" alt="Separação correta do lixo" class="imagem-dinamica">
+    </section>
+    
+    <section id="materia" class="section">
+        <h2><i class="bi bi-house-door-fill"></i> Reciclagem dentro de casa</h2>
+        <p>A reciclagem é uma prática essencial para a preservação do meio ambiente, e muitas vezes podemos começar a aplicar esses hábitos dentro de nossas próprias casas.</p>
+    
+        <h3><i class="bi bi-recycle"></i> 1. O que é reciclagem?</h3>
+        <p>Reciclagem é o processo de transformar materiais descartados em novos produtos, reduzindo a necessidade de utilizar novos recursos naturais.</p>
+        <img src="image/Roteiro_Lixos.png" alt="Reciclagem sendo feita dentro de casa" class="imagem-dinamica">
+    
+        <h3><i class="bi bi-globe2"></i> 2. Por que é importante reciclar?</h3>
+        <p>Reciclar é importante porque ajuda a preservar o meio ambiente, economiza energia, diminui a poluição e reduz a quantidade de lixo.</p>
+        <img src="image/positivo.jpeg" alt="Impacto positivo da reciclagem" class="imagem-dinamica">
+    </section>
+  
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="imgcub" id="modal-img" src="image/" alt="Imagem do Projeto">
+        <h2 id="modal-title">Título do Projeto</h2>
+        <p id="modal-description">Descrição do Projeto</p>
+        <p id="modal-extra" style="display: none; font-style: italic;"></p>
+        <a class="box-inf" id="modal-link" href="" target="_blank">
+            <i class="fas fa-search"></i> Acessar Projeto
+        </a>
+    </div>
+</div>
+
+
+<section id="mapa" class="section">
+    <h2>Locais para Reciclagem em Curitiba</h2>
+    <div id="map" style="height: 500px;"></div>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+        /* Ícone com corner */
+        .marker-icon {
+            position: relative;
+            width: 40px;
+            height: 40px;
+        }
+
+        .marker-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px; /* borda arredondada */
+            border: 2px solid #28a745; /* destaque verde */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Pequeno corner no topo direito */
+        .marker-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            background-color: #ff0000; /* cor do corner */
+            border-radius: 50%;
+            border: 1px solid #fff;
+        }
+    </style>
+
+   <script>
+
+// Inicializar mapa
+var map = L.map('map').setView([-25.4284, -49.2733], 12);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Ícone personalizado
+var iconeReciclagem = L.divIcon({
+    className: 'marker-icon',
+    html: `<img src="image/logo.png" alt="Reciclagem">`,
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40]
+});
+
+// Função para carregar pontos
+async function carregarPontosDeReciclagem() {
+    let query = `
+[out:json][timeout:25];
+area["name"="Curitiba"]->.searchArea;
+(
+  node["amenity"="recycling"](area.searchArea);
+  way["amenity"="recycling"](area.searchArea);
+  relation["amenity"="recycling"](area.searchArea);
+);
+out center;
+`;
+    let url = "https://overpass-api.de/api/interpreter?data=" + encodeURIComponent(query);
+
+    try {
+        let resposta = await fetch(url);
+        let dados = await resposta.json();
+
+        dados.elements.forEach(ponto => {
+            let lat = ponto.lat || ponto.center?.lat;
+            let lon = ponto.lon || ponto.center?.lon;
+            if (!lat || !lon) return;
+
+            let nome = ponto.tags.name || ponto.tags.recycling_type || "Ponto de Reciclagem";
+
+            let marker = L.marker([lat, lon], { icon: iconeReciclagem }).addTo(map);
+
+            // Ao clicar, abre o modal com os dados do ponto
+// Ao clicar, abre o modal com os dados do ponto
+marker.on('click', () => {
+    // URL do Google Maps para o ponto
+    let mapsLink = `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
+
+    openModal(
+        nome,
+        ponto.tags.description || "Este é um ponto de reciclagem em Curitiba.",
+        "image/logo.png",   // imagem personalizada por ponto se quiser
+        mapsLink,           // link do Google Maps
+        ponto.tags.recycling_type || ""
+    );
+});
+
+        });
+    } catch (erro) {
+        console.error("Erro ao carregar os pontos de reciclagem:", erro);
+    }
+}
+
+carregarPontosDeReciclagem();
+
+
+</script>
+
+</section>
+
+
+
+    
+        <script src="js/script.js"></script>
+   
+
+        
+  <script>
+        AOS.init();
+
+    function openModal(title, description, img, link, extraText = "") {
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-description").innerText = description;
+    document.getElementById("modal-img").src = img;
+    document.getElementById("modal-link").href = link;
+
+    let extraElement = document.getElementById("modal-extra");
+
+    if (extraText.trim() !== "") {
+        extraElement.innerText = extraText;
+        extraElement.style.display = "block";
+    } else {
+        extraElement.style.display = "none";
+    }
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+
+        gsap.from(".menu ul li", { opacity: 0, y: -50, duration: 1, stagger: 0.2 });
+        gsap.from(".btn", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.3 });
+    </script>
+
+    <section id="contato" class="section">
+        <h2>Fale Conosco</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+            
+            <button type="submit" class="botao-inicio">Enviar</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Descarte Correto. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

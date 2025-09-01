@@ -1,0 +1,60 @@
+
+/* =========================
+   Acessibilidade - Menu
+   ========================= */
+   .menu-acessibilidade {
+    position: fixed;
+    top: 2rem;
+    right: 20px;
+    z-index: 1000;
+}
+
+.rotacao-botao {
+    transform: rotate(-90deg);
+    transform-origin: right center;
+}
+
+.opcoes-acessibilidade {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.opcoes-acessibilidade button {
+    margin-bottom: 5px;
+}
+
+.apresenta-lista {
+    display: none;
+}
+/* Botões de acessibilidade em tom azul */
+.opcoes-acessibilidade button,
+#botao-acessibilidade {
+    background-color: #007bff; /* azul primário */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.opcoes-acessibilidade button:hover,
+#botao-acessibilidade:hover {
+    background-color: #0056b3; /* azul mais escuro no hover */
+}
+
+.opcoes-acessibilidade button:active,
+#botao-acessibilidade:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícone da lua ajustado */
+#alterna-contraste i {
+    margin-left: 5px;
+}
+
+
