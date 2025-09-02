@@ -204,7 +204,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Ícone personalizado
 var iconeReciclagem = L.divIcon({
     className: 'marker-icon',
-    html: `<img src="image/logo.png" alt="Reciclagem">`,
+    html: `<img src="image/Logo.png" alt="Reciclagem">`,
     iconSize: [40, 40],
     iconAnchor: [20, 40],
     popupAnchor: [0, -40]
@@ -246,7 +246,7 @@ marker.on('click', () => {
     openModal(
         nome,
         ponto.tags.description || "Este é um ponto de reciclagem em Curitiba.",
-        "image/logo.png",   // imagem personalizada por ponto se quiser
+        "image/Logo.png",   // imagem personalizada por ponto se quiser
         mapsLink,           // link do Google Maps
         ponto.tags.recycling_type || ""
     );
