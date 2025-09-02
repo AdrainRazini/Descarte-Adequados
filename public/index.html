@@ -31,10 +31,11 @@
     <a class="button" href="#sobre">Início</a>
     <a class="button" href="#dicas">Saiba Mais</a>
     <a class="button" href="login.html">Entrar</a>
+    <a class="button" href="#jogo">Jogar</a>
   </nav>
 
-</header>
 
+</header>
 
 
     <!-- Bloco de acessibilidade -->
@@ -58,6 +59,7 @@
         </div>
     </div>
 
+
 <script>
   const menuToggle = document.getElementById('mobile-menu');
   const navLinks = document.querySelector('.nav-links');
@@ -78,7 +80,7 @@
     <p>🌳 "Separar o lixo hoje é plantar um amanhã melhor."</p>
   </div>
 
-  <div class="Linha"></div>
+  <div class="Linha" style="margin: 25px;" ></div>
 
   <div class="align-center align-block">
     <p>🌱 "Cada atitude conta:
@@ -89,23 +91,10 @@
 </div>
 
 
-<div class="container_back fundoC">
-  <h1>Jogo Da Reciclagem</h1>
-
-    <div class="align-center align-block">
-    <p> 🌳 "Experimente Jogar Nosso jogo de Separação de Lixo"</p>
-  <img src="image/Controle.png" alt="" class="image_retangulo" style="border-radius: 50%;" >
-</div>
-
-<div class="Linha"></div>
-<div class="align-center">
-  <a href="game.html" class="button">Jogar</a>
-</div>
-</div>
 
 <div class="container_Video_back fundoB">
   <h1>Video</h1>
-          <video class="container_Video_back"  controls>
+          <video class="container_Source_Video_back"  controls>
             <source src="video/A_Importância_da_Separação_do_Lixo.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
@@ -215,7 +204,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Ícone personalizado
 var iconeReciclagem = L.divIcon({
     className: 'marker-icon',
-    html: `<img src="image/Logo.png" alt="Reciclagem">`,
+    html: `<img src="image/logo.png" alt="Reciclagem">`,
     iconSize: [40, 40],
     iconAnchor: [20, 40],
     popupAnchor: [0, -40]
@@ -257,7 +246,7 @@ marker.on('click', () => {
     openModal(
         nome,
         ponto.tags.description || "Este é um ponto de reciclagem em Curitiba.",
-        "image/Logo.png",   // imagem personalizada por ponto se quiser
+        "image/logo.png",   // imagem personalizada por ponto se quiser
         mapsLink,           // link do Google Maps
         ponto.tags.recycling_type || ""
     );
@@ -315,6 +304,23 @@ function closeModal() {
         gsap.from(".menu ul li", { opacity: 0, y: -50, duration: 1, stagger: 0.2 });
         gsap.from(".btn", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.3 });
     </script>
+
+
+
+<div id="jogo" class="container_back fundoC">
+  <h1>Jogo Da Reciclagem</h1>
+
+    <div class="align-center align-block">
+    <p> 🌳 "Experimente Jogar Nosso jogo de Separação de Lixo"</p>
+  <img src="image/Controle.png" alt="" class="image_retangulo" style="border-radius: 50%;" >
+</div>
+
+<div class="Linha" style="margin: 25px;" ></div>
+<div class="align-center">
+  <a href="game.html" class="button">Jogar</a>
+</div>
+</div>
+
 
     <section id="contato" class="section">
         <h2>Fale Conosco</h2>
